@@ -1,0 +1,48 @@
+{
+  "authorities": [
+    {
+      "LocalAuthorityId": 197,
+      "LocalAuthorityIdCode": "760",
+      "Name": "Aberdeen City",
+      "FriendlyName": "aberdeen-city",
+      "Url": "http://www.aberdeencity.gov.uk",
+      "SchemeUrl": "",
+      "Email": "commercial@aberdeencity.gov.uk",
+      "RegionName": "Scotland",
+      "FileName": "http://ratings.food.gov.uk/OpenDataFiles/FHRS760en-GB.xml",
+      "FileNameWelsh": null,
+      "EstablishmentCount": 1759,
+      "CreationDate": "2010-08-17T15:30:24.87",
+      "LastPublishedDate": "2017-03-21T00:32:35.593",
+      "SchemeType": 2,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://api.ratings.food.gov.uk/authorities/197"
+        }
+      ]
+    },
+    {
+      "LocalAuthorityId": 198,
+      "LocalAuthorityIdCode": "761",
+      "Name": "Aberdeenshire",
+      "FriendlyName": "aberdeenshire",
+      "Url": "http://www.aberdeenshire.gov.uk/",
+      "SchemeUrl": "",
+      "Email": "environmental@aberdeenshire.gov.uk",
+      "RegionName": "Scotland",
+      "FileName": "http://ratings.food.gov.uk/OpenDataFiles/FHRS761en-GB.xml",
+      "FileNameWelsh": null,
+      "EstablishmentCount": 1809,
+      "CreationDate": "2010-08-17T15:30:24.87",
+      "LastPublishedDate": "2017-02-28T00:31:02.443",
+      "SchemeType": 2,
+      "links": [
+        {
+          "rel": "self",
+          "href": "http://api.ratings.food.gov.uk/authorities/198"
+        }
+      ]
+    }
+  ]
+}
