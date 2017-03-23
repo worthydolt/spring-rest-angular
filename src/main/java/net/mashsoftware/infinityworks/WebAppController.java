@@ -13,9 +13,9 @@ import java.util.List;
 @Controller
 public class WebAppController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String index() {
-        return "index";
+        return "/app/index.html";
     }
 
 
