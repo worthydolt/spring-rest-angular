@@ -15,7 +15,7 @@ public class WebAppController {
 
     @RequestMapping("/")
     public String index() {
-        return "/app/index.html";
+        return "app/index.html";
     }
 
 

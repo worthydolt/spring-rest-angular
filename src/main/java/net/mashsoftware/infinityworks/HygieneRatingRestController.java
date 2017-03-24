@@ -19,7 +19,7 @@ public class HygieneRatingRestController {
 
     @Autowired RatingsRestService service;
 
-    @RequestMapping("/api/allAuthorities")
+    @RequestMapping("/app/rest/allAuthorities")
     public LocalAuthorities getAllAuthorities() {
         return service.getAllLocalAuthorities();
     }

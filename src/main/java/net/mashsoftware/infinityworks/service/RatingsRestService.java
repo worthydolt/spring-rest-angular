@@ -4,6 +4,8 @@ import net.mashsoftware.infinityworks.dto.LocalAuthorities;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -23,7 +25,8 @@ public class RatingsRestService {
     public LocalAuthorities getAllLocalAuthorities() {
         HttpHeaders headers = new HttpHeaders();
         headers.set("x-api-version", "2");
-        HttpEntity<LocalAuthorities> entity = new HttpEntity<>(headers);
-        return this.restTemplate.getForObject("http://api.ratings.food.gov.uk/Authorities", LocalAuthorities.class);
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        ResponseEntity<LocalAuthorities> response = this.restTemplate.exchange("http://api.ratings.food.gov.uk/Authorities", HttpMethod.GET, entity, LocalAuthorities.class);
+        return response.getBody();
     }
 }
