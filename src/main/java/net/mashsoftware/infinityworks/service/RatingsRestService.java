@@ -1,5 +1,6 @@
 package net.mashsoftware.infinityworks.service;
 
+import net.mashsoftware.infinityworks.dto.Establishments;
 import net.mashsoftware.infinityworks.dto.LocalAuthorities;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
@@ -16,6 +17,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RatingsRestService {
 
+    public static final String REST_API_URL_FOR_LIST_OF_AUTHORITIES = "http://api.ratings.food.gov.uk/Authorities";
+    public static final String REST_API_URL_FOR_LIST_OF_ESTABLISHMENTS_BY_AUTHORITY = "http://api.ratings.food.gov.uk/Establishments?localAuthorityId=%s&pageSize=0";
     private final RestTemplate restTemplate;
 
     private HttpEntity<String> entity;
@@ -29,12 +32,23 @@ public class RatingsRestService {
 
     /**
      * Method to make the call to the FHRS API REST service to retrieve the list of all authorities
+     *
      * @return a {@link LocalAuthorities} instance which represents the unmarshalled JSON response and contains details of all local authorities available to query through the API
      */
     public LocalAuthorities getAllLocalAuthorities() {
-        ResponseEntity<LocalAuthorities> response = this.restTemplate.exchange("http://api.ratings.food.gov.uk/Authorities", HttpMethod.GET, entity, LocalAuthorities.class);
+        ResponseEntity<LocalAuthorities> response = restTemplate.exchange(REST_API_URL_FOR_LIST_OF_AUTHORITIES, HttpMethod.GET, entity,
+                LocalAuthorities.class);
         return response.getBody();
     }
 
-    public
+    /**
+     * Method to retrieve the list of establishments belonging to the authority identified by the localAuthorityId parameter.
+     * @param localAuthorityId the ID of the local authority to get the list of establishments for
+     * @return an {@link Establishments} instance
+     */
+    public Establishments getEstablishmentsForAuthority(String localAuthorityId) {
+        ResponseEntity<Establishments> response = restTemplate.exchange(String.format(REST_API_URL_FOR_LIST_OF_ESTABLISHMENTS_BY_AUTHORITY,
+                localAuthorityId), HttpMethod.GET, entity, Establishments.class);
+        return response.getBody();
+    }
 }

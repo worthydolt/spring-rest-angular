@@ -9,15 +9,15 @@
 //     'myApp.viewRatings'
 //
 // ])
-   /* .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
+/* .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+ $locationProvider.hashPrefix('!');
 
-    $routeProvider.otherwise({redirectTo: '/view1'});
-}])*/
+ $routeProvider.otherwise({redirectTo: '/view1'});
+ }])*/
 
 angular.module('iWorksRatingsApp', [
-    'showAuthorities', 'viewRatings'
-]) ;
+    'showAuthorities', 'viewRatings', 'sharedData'
+]);
 
 
 

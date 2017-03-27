@@ -1,6 +1,6 @@
 angular.module('viewRatings').component('viewRatings', {
     templateUrl: 'view-ratings/view-ratings.template.html',
-    controller: ['$http', '$routeParams',
+    controller: ['$http', 'sharedData',
         function ViewRatingsController() {
             var self = this;
 

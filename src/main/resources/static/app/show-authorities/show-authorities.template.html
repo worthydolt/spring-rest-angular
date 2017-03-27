@@ -1,6 +1,5 @@
-<select ng-model="authority" ng-change="$ctrl.changed()">
-    <option ng-repeat="auth in $ctrl.authorities.authorities" value="{{auth.LocalAuthorityId}}">
-        {{auth.Name}}
-    </option>
+<select ng-model="authority"
+        ng-options="auth as auth.Name for auth in authorities.authorities track by auth.LocalAuthorityId"
+        ng-change="changed()">
 </select>
 
