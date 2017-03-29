@@ -1,18 +1,8 @@
 angular.module('iWorksRatingsApp').factory('sharedData', function () {
-    var serviceData = {};
+    var self = this;
 
-    function setData(key, data) {
-        serviceData[key] = data;
-    }
+    self.establishments = {};
 
-    function getData(key) {
-        return serviceData[key];
-    }
-
-    var service = {
-        getData: getData,
-        setData: setData
-    };
-    return service;
+    return self;
 
 })
