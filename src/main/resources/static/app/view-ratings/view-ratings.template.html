@@ -1,8 +1,14 @@
-<table>
-    <th>Rating</th><th>Percentage</th>
-    <tr ng-repeat="(key, value) in establishments">
-        <td>{{key}}</td>
-        <td>{{ value*100/totalRatings | number:2 }}</td>
-    </tr>
-</table>
-
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Rating</th>
+            <th>Percentage</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="(key, value) in establishments">
+            <td>{{key}}</td>
+            <td>{{ value*100/totalRatings | number:2 }}</td>
+        </tr>
+    </table>
+</div>
