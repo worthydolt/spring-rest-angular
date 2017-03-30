@@ -2,7 +2,7 @@
     <th>Rating</th><th>Percentage</th>
     <tr ng-repeat="(key, value) in establishments">
         <td>{{key}}</td>
-        <td>{{value}}</td>
+        <td>{{ value*100/totalRatings | number:2 }}</td>
     </tr>
 </table>
 
