@@ -1,4 +1,4 @@
-# `Food Standards` — a web-app to allow viewing the proportions of each food standard gradefor a selected authority
+# `Food Standards` — a web-app to allow viewing the proportions of each food standard grade for a selected authority
 
 ## Getting Started
 After checking out, run npm install then start Tomcat by running ./gradlew bootRun.

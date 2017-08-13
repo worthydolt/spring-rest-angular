@@ -1,5 +1,6 @@
-<select ng-model="authority"
+<label for="authority">Authority</label>
+<select ng-model="authority" id="authority"
         ng-options="auth as auth.Name for auth in authorities.authorities track by auth.LocalAuthorityId"
         ng-change="changed()">
 </select>
-
+<span us-spinner spinner-key="spinner-1" spinner-on="false"></span>

@@ -16,12 +16,13 @@ import org.springframework.test.web.client.MockRestServiceServer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.contains;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.header;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withBadRequest;
-import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
+import static org.springframework.test.web.client.response.MockRestResponseCreators.*;
 
 /**
  * Test the service class that handles interactions with the REST service and returns POJOs to us
@@ -102,24 +103,25 @@ public class HygieneRatingRestControllerTest {
                     .andRespond(withBadRequest());
 
             LocalAuthorities response = ratingsRestService.getAllLocalAuthorities();
-            assertNotNull(response);
+            fail("Should have thrown exception");
         } catch (Exception e) {
-            fail("Should not have thrown exception");
+            assertThat(e.getMessage(), containsString("Bad Request"));
         }
     }
 
     @Test
-    public void getEstablishmentsThrowsTimeoutException(){
+    public void getEstablishmentsThrowsServerError(){
         try {
             mockRestServiceServer.expect(requestTo(RatingsRestService.REST_API_URL_FOR_LIST_OF_AUTHORITIES))
                     .andExpect(method(HttpMethod.GET))
                     .andExpect(header("x-api-version", "2"))
-                    .andRespond(withBadRequest());
+                    .andRespond(withServerError());
 
             LocalAuthorities response = ratingsRestService.getAllLocalAuthorities();
-            assertNotNull(response);
-        } catch (Exception e) {
             fail("Should not have thrown exception");
+        } catch (Exception e) {
+            assertThat(e.getMessage(), containsString("Internal Server Error"));
+
         }
     }
 }

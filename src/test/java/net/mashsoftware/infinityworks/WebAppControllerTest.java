@@ -29,10 +29,10 @@ public class WebAppControllerTest {
     @Test
     public void index() throws Exception {
         assertNotNull(webAppController);
-        this.mockMvc.perform(get("/index"))
+        this.mockMvc.perform(get("/app/index.html"))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExpect(content().string(containsString("Infinity Works")));
+            .andExpect(content().string(containsString("Restaurant")));
     }
 
 }
