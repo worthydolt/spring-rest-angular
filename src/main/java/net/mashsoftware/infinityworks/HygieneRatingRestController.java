@@ -22,7 +22,9 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 
 /**
- * Created by neil on 11/03/17.
+ * A controller to provide services to our front-end application. When the front-end requires data it calls down to here.
+ * We try to keep as little code as we can get away with in the front-end as a Java application is easier to test and
+ * easier to scale
  */
 @RestController
 public class HygieneRatingRestController {
@@ -37,7 +39,6 @@ public class HygieneRatingRestController {
     @RequestMapping("/app/rest/authorityEstablishments")
     public Map<String, Long> getAuthorityEstablishments(@RequestParam String authorityId) {
         Establishments establishments = service.getEstablishmentsForAuthority(authorityId);
-        int totalEstablishments = establishments.getEstablishments().size();
         Stream<Establishment> establishmentStream = establishments.getEstablishments().stream();
         Map<String, Long> ratingsGroupedByCount = establishmentStream.collect(Collectors.groupingBy(Establishment::getRatingValue, counting()));
         return ratingsGroupedByCount;

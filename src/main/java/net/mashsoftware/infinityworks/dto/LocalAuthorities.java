@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Created by neil on 21/03/17.
+ * DTO into which to unmarshal the {@link LocalAuthority} array we get back from the API service
  */
 public class LocalAuthorities {
     @JsonProperty("authorities")

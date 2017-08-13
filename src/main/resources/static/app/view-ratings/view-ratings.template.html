@@ -7,8 +7,8 @@
         </tr>
         </thead>
         <tr ng-repeat="(key, value) in establishments">
-            <td>{{key}}</td>
-            <td>{{ value*100/totalRatings | number:2 }}</td>
+            <td>{{ formatLabel(key)}}</td>
+            <td>{{ value*100/totalRatings | number:2 }}%</td>
         </tr>
     </table>
 </div>

@@ -159,28 +159,4 @@ public class LocalAuthority {
         return ToStringBuilder.reflectionToString(this);
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//       return EqualsBuilder.reflectionEquals(this, o);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = localAuthorityId;
-//        result = 31 * result + (localAuthorityIdCode != null ? localAuthorityIdCode.hashCode() : 0);
-//        result = 31 * result + (name != null ? name.hashCode() : 0);
-//        result = 31 * result + (friendlyName != null ? friendlyName.hashCode() : 0);
-//        result = 31 * result + (url != null ? url.hashCode() : 0);
-//        result = 31 * result + (schemeUrl != null ? schemeUrl.hashCode() : 0);
-//        result = 31 * result + (email != null ? email.hashCode() : 0);
-//        result = 31 * result + (regionName != null ? regionName.hashCode() : 0);
-//        result = 31 * result + (fileName != null ? fileName.hashCode() : 0);
-//        result = 31 * result + (fileNameWelsh != null ? fileNameWelsh.hashCode() : 0);
-//        result = 31 * result + establishmentCount;
-//        result = 31 * result + (creationDate != null ? creationDate.hashCode() : 0);
-//        result = 31 * result + (lastPublishedDate != null ? lastPublishedDate.hashCode() : 0);
-//        result = 31 * result + schemeType;
-//        result = 31 * result + (links != null ? links.hashCode() : 0);
-//        return result;
-//    }
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by neil on 11/03/17.
+ * The simplest of controllers which provides the app's entry point, serving the index page
  */
 @Controller
 public class WebAppController {

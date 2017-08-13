@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Created by neil on 26/03/17.
+ * A DTO to represent the data about the establishment. We only actually care about the rating at the moment but
+ * could easily add other properties to unmarshal into
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Establishment {

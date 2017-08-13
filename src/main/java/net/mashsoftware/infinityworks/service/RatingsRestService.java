@@ -12,7 +12,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Created by neil on 22/03/17.
+ * A service class to handle all interactions with the Food Standards Agency API service
  */
 @Service
 public class RatingsRestService {
@@ -33,7 +33,7 @@ public class RatingsRestService {
     /**
      * Method to make the call to the FHRS API REST service to retrieve the list of all authorities
      *
-     * @return a {@link LocalAuthorities} instance which represents the unmarshalled JSON response and contains details of all local authorities available to query through the API
+     * @return a {@link LocalAuthorities} instance which represents the unmarshaled JSON response and contains details of all local authorities available to query through the API
      */
     public LocalAuthorities getAllLocalAuthorities() {
         ResponseEntity<LocalAuthorities> response = restTemplate.exchange(REST_API_URL_FOR_LIST_OF_AUTHORITIES, HttpMethod.GET, entity,
@@ -42,8 +42,8 @@ public class RatingsRestService {
     }
 
     /**
-     * Method to retrieve the list of establishments belonging to the authority identified by the localAuthorityId parameter.
-     * @param localAuthorityId the ID of the local authority to get the list of establishments for
+     * Method to retrieve the list of establishments (with associated rating) belonging to the authority identified by the localAuthorityId parameter.
+     * @param localAuthorityId the ID of the local authority to get the list of rated establishments for
      * @return an {@link Establishments} instance
      */
     public Establishments getEstablishmentsForAuthority(String localAuthorityId) {

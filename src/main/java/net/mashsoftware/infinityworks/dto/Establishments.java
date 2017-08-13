@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Created by neil on 26/03/17.
+ * * DTO into which to unmarshal the {@link Establishment} array we get back from the API service
  */
 public class Establishments {
     @JsonProperty("establishments")
